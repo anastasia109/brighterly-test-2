@@ -1,0 +1,253 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $montserrat, sans-serif;
+  color: $black;
+  @include font(12px, 600, 16px);
+
+  @include tablets {
+    @include font();
+  }
+}
+
+button {
+  outline: none;
+  background: none;
+  border: none;
+}
+
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+}
+
+.container {
+  padding: 0 8px;
+
+  @include tablets {
+    max-width: 1268px;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 16px 31px;
+  @include font(16px, 800, 24px, 0.4px);
+  color: $white;
+  background-color: $red;
+  border-radius: 4px;
+  transition: all .5s;
+
+  &:hover {
+    background-color: $darkRed;
+  }
+
+  &:active {
+    background-color: $lightRed;
+  }
+
+  &:disabled {
+    background-color: $lightBlue;
+  }
+
+  &--green {
+    background-color: $green;
+  }
+}
+
+.gray-text {
+  color: $green;
+}
+
+.yellow-text {
+  color: $yellow;
+}
+
+.desktop {
+  display: none;
+
+  @include tablets {
+    display: inline-block;
+  }
+}
+
+.mobile {
+  display: block;
+
+  @include tablets {
+    display: none;
+  }
+}
+
+.custom-field {
+  padding: 11px 8px 9px 13px;
+  margin-bottom: 16px;
+  background-color: $white;
+  border: 1px solid $lightBlue;
+  border-radius: 8px;
+  @include font(16px, 500, 24px);
+
+  @include tablets {
+    @include font();
+  }
+
+  &__label {
+    margin-bottom: 10px;
+    @include font(12px, 500, 16px);
+  }
+
+  &.error {
+    border: 1px solid $red;
+  }
+
+  &.success {
+    border: 1px solid $green;
+
+    input {
+      color: $green;
+    }
+  }
+
+  &.activated {
+    border: 1px solid $black;
+  }
+
+  &.disable {
+    p, input {
+      color: $lightBlue
+    }
+  }
+}
+
+.custom-btn {
+  width: 100%;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+.custom-select {
+  position: relative;
+
+  select,
+  &__hide {
+    display: none;
+  }
+
+  &__selected {
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: calc(50% - 12px);
+      right: 0;
+      width: 24px;
+      height: 24px;
+      background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10L12 15L17 10' stroke='%230D2A54' stroke-width='2'/%3E%3C/svg%3E%0A");
+      transition: all .5s;
+    }
+
+    &.custom-select__arrow-active {
+      &:after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__items div,
+  &__selected {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &__items {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background-color: $white;
+    border: 1px solid $lightBlue;
+    border-radius: 8px;
+
+    div,
+    &--selected {
+      padding: 8px 16px;
+
+      &:hover {
+        background-color: $lightBlue;
+      }
+
+      &:last-child {
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+      }
+
+      &:first-child {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+    }
+
+    &--selected {
+      position: relative;
+      color: $green;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: calc(50% - 7px);
+        right: 12px;
+        display: block;
+        height: 14px;
+        width: 14px;
+        background-size: cover;
+        background-image: url("data:image/svg+xml,%3Csvg fill='%2306A66C' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M470.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 338.7 425.4 105.4c12.5-12.5 32.8-12.5 45.3 0z'/%3E%3C/svg%3E");
+      }
+    }
+  }
+}
+
+.custom-input {
+  input {
+    padding-left: 2px;
+    padding-right: 2px;
+    width: 100%;
+    @include font(16px, 500, 24px);
+    font-family: $montserrat;
+    border: none;
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+}
+
+.swiper {
+  .swiper-pagination-bullet {
+    background-color: $lightBlue;
+    border-radius: 4px;
+    opacity: 1;
+    transition: all .5s ease;
+
+    &.swiper-pagination-bullet-active {
+      width: 56px;
+      background-color: $black;
+    }
+  }
+}

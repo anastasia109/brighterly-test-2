@@ -1,0 +1,52 @@
+/* breakpoints */
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-max: 545px;
+
+// Small tablets (portrait view)
+$screen-md-max: 768px;
+
+// Tablets and small desktops
+$screen-lg-max: 1025px;
+
+// Large tablets and desktops
+$screen-xl-max: 1280px;
+
+
+@mixin desktop {
+  @media (min-width: #{$screen-xl-max}) {
+    @content
+  }
+}
+
+@mixin laptop {
+  @media (min-width: #{$screen-lg-max}) {
+    @content
+  }
+}
+
+@mixin tablets {
+  @media (min-width: #{$screen-md-max}) {
+    @content
+  }
+}
+
+@mixin phones {
+  @media (min-width: #{$screen-sm-max}) {
+    @content
+  }
+}
+
+@mixin font($fz: 16px, $weight: 600, $lh: 1.5, $ls: normal) {
+  font-size: $fz;
+  font-weight: $weight;
+  line-height: $lh;
+  letter-spacing: $ls;
+}
+
+@mixin flex($flex:flex, $dir:row, $justify:flex-start, $align:flex-start) {
+  display: $flex;
+  flex-direction: $dir;
+  justify-content: $justify;
+  align-items: $align;
+}
