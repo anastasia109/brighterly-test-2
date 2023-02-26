@@ -341,8 +341,8 @@
 
   &__image {
     display: block;
-    width: 100%;
-    margin-bottom: 8px;
+    max-width: 100%;
+    margin: 0 auto 8px;
     border-radius: 8px;
 
     @include tablets {
@@ -557,7 +557,9 @@
   }
 
   img {
+    display: block;
     max-width: 100%;
+    margin: 0 auto;
     vertical-align: middle;
   }
 
