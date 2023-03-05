@@ -1,0 +1,129 @@
+.banner {
+  padding-top: 10px;
+  padding-bottom: 38px;
+  background: $gray;
+
+  @include tablets {
+    padding-bottom: 0;
+  }
+
+  @include laptop {
+    padding-top: 28px;
+  }
+}
+
+.banner-content {
+  @include flex(flex, column);
+
+  @include tablets {
+    @include flex(flex, row, space-between);
+  }
+}
+
+.banner-info {
+  @include laptop {
+    padding-top: 20px;
+    max-width: 585px;
+  }
+
+  &__title {
+    max-width: 200px;
+    margin: 0 auto 9px auto;
+    @include font(20px, 800, 28px, 0.3px);
+    text-align: center;
+    color: $black;
+
+    @include tablets {
+      max-width: none;
+      margin-bottom: 17px;
+      @include font(36px, 800, 48px, 0.7px);
+      text-align: left;
+    }
+
+    @include laptop {
+      @include font(48px, 800, 64px, 0.7px);
+    }
+  }
+
+  &__frame {
+    padding: 4px 8px;
+    width: 93px;
+    margin: 0 auto 8px auto;
+    background-color: $lightBlue;
+    border-radius: 4px;
+    @include font(14px, 800, 24px);
+  }
+
+  &__text {
+    margin-bottom: 8px;
+    @include font(14px, 800, 20px, 0.2px);
+
+    @include tablets {
+      margin-bottom: 27px;
+      @include font(20px, 800, 28px, 0.25px);
+    }
+  }
+
+  &__list {
+    margin-bottom: 22px;
+
+    @include tablets {
+      margin-bottom: 40px;
+    }
+
+    li {
+      @include flex(flex);
+      margin-bottom: 12px;
+
+      @include tablets {
+        margin-bottom: 15px;
+      }
+
+      img {
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+
+        @include tablets {
+          margin-right: 10px;
+          width: auto;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    display: block;
+    width: 169px;
+    margin: 0 auto 17px auto;
+
+    @include tablets {
+      margin: 0 0 30px;
+    }
+  }
+}
+
+.banner-image {
+  width: 100%;
+  @include flex(flex, row, center);
+  background-color: $white;
+
+  @include tablets {
+    @include flex(flex, row, flex-end);
+    align-self: flex-end;
+    background-color: transparent;
+  }
+
+  img {
+    width: 128px;
+
+    @include tablets {
+      width: 100%;
+    }
+
+    @include laptop {
+      width: auto;
+    }
+  }
+}

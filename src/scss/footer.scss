@@ -1,0 +1,78 @@
+.footer {
+  padding-top: 40px;
+  background-color: $darkBlue;
+
+  @include tablets {
+    padding-top: 35px;
+  }
+
+  &__image {
+    align-self: flex-end;
+    width: 50%;
+
+    @include phones {
+      width: auto;
+    }
+
+    &:last-child {
+      width: 55%;
+      margin-left: -5%;
+
+      @include phones {
+        margin-right: -8px;
+        margin-left: 0;
+        width: auto;
+      }
+    }
+  }
+}
+
+.footer-content {
+  @include flex(flex, row, space-between);
+  flex-wrap: wrap;
+
+  @include laptop {
+    max-width: 1330px;
+    flex-wrap: nowrap;
+  }
+}
+
+.footer-info {
+  order: -1;
+  width: 100%;
+  margin-bottom: 25px;
+  text-align: center;
+
+  @include phones {
+    margin-bottom: -50px;
+  }
+
+  @include laptop {
+    order: 0;
+    width: auto;
+    margin-bottom: 25px;
+    margin-top: 45px;
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    @include font(16px, 800, 24px, 0.15px);
+    color: $white;
+
+    @include tablets {
+      @include font(24px, 800, 36px, 0.5px);
+    }
+
+    @include laptop {
+      @include font(32px, 800, 48px, 0.35px);
+    }
+
+    br {
+      display: none;
+
+      @include tablets {
+        display: inline;
+      }
+    }
+  }
+}

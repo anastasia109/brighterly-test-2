@@ -1,0 +1,98 @@
+.stem {
+  padding-top: 24px;
+  padding-bottom: 32px;
+  background-color: $white;
+
+  @include tablets {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+
+  @include laptop {
+    padding-top: 80px;
+    padding-bottom: 110px;
+  }
+}
+
+.stem-logo {
+  margin-bottom: 3px;
+
+  @include tablets {
+    margin-bottom: 18px;
+  }
+
+  img {
+    width: 64px;
+
+    @include tablets {
+      width: auto;
+    }
+  }
+}
+
+.stem-info {
+  @include flex(flex, column);
+
+  @include tablets {
+    flex-direction: row;
+  }
+
+  &__text {
+    margin-bottom: 45px;
+    @include font(14px, 800, 20px, 0.15px);
+
+    @include tablets {
+      max-width: 690px;
+      margin-right: 40px;
+      margin-bottom: 0;
+      @include font(20px, 800, 28px, 0.3px);
+    }
+
+    @include laptop {
+      @include font(24px, 800, 40px, 0.3px);
+    }
+  }
+}
+
+.stem-date {
+  display: grid;
+  row-gap: 17px;
+  width: 100%;
+
+  @include tablets {
+    max-width: 392px;
+    row-gap: 23px;
+  }
+
+  &__title {
+    margin-bottom: 3px;
+  }
+
+  &__progress {
+    padding: 7px;
+    text-align: right;
+
+    @include tablets {
+      padding: 5px;
+    }
+
+    &:first-child {
+      margin-bottom: 24px;
+    }
+
+    &--green {
+      width: 100%;
+      color: $white;
+      background: $green;
+    }
+
+    &--yellow {
+      width: 54.5%;
+      background: $yellow;
+    }
+
+    span {
+      @include font(12px);
+    }
+  }
+}

@@ -1,0 +1,70 @@
+.feedback {
+  padding-top: 80px;
+  padding-bottom: 66px;
+  background-color: $gray;
+
+  @include tablets {
+    padding-bottom: 42px;
+  }
+
+  &__title {
+    margin-bottom: 17px;
+    @include font(16px, 800, 24px, 0.25px);
+    text-align: center;
+
+    @include tablets {
+      max-width: 600px;
+      margin: 0 auto 40px auto;
+      @include font(36px, 800, 48px, 0.7px);
+      text-align: left;
+    }
+
+    @include laptop {
+      @include font(48px, 800, 64px, 0.5px);
+    }
+  }
+
+  &__items {
+    padding-bottom: 30px;
+  }
+
+  &__items-inner {
+    @include tablets {
+      display: block;
+      column-gap: 16px;
+      column-count: 3;
+    }
+
+    @include laptop {
+      column-gap: 24px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 16px;
+
+    @include tablets {
+      margin-bottom: 24px;
+    }
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    vertical-align: middle;
+  }
+
+  .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: $gray;
+    border: 2px solid $black;
+    border-radius: 100%;
+
+    &.swiper-pagination-bullet-active {
+      width: 12px;
+      background-color: $black;
+    }
+  }
+}

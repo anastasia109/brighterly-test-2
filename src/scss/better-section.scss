@@ -1,0 +1,46 @@
+.better {
+  padding-top: 25px;
+  padding-bottom: 32px;
+  background-color: $white;
+
+  @include tablets {
+    padding-top: 45px;
+    padding-bottom: 50px;
+  }
+
+  @include laptop {
+    padding-top: 65px;
+    padding-bottom: 70px;
+  }
+}
+
+.better-content {
+  text-align: center;
+
+  @include tablets {
+    max-width: 634px;
+    text-align: left;
+  }
+
+  &__text {
+    margin-bottom: 16px;
+    @include font(14px, 800, 20px, 0.2px);
+
+    @include tablets {
+      margin-bottom: 30px;
+      @include font(20px, 800, 28px, 0.2px);
+    }
+
+    @include laptop {
+      @include font(24px, 800, 40px, 0.2px);
+    }
+
+    br {
+      display: none;
+
+      @include tablets {
+        display: inline;
+      }
+    }
+  }
+}

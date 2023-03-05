@@ -1,0 +1,28 @@
+.header {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background: $gray;
+
+  @include tablets {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+
+  &__logo {
+    display: block;
+    text-align: center;
+
+    @include tablets {
+      text-align: left;
+    }
+
+    img {
+      width: 91px;
+
+      @include tablets {
+        width: 114px;
+      }
+    }
+  }
+}

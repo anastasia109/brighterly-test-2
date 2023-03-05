@@ -1,0 +1,96 @@
+.about {
+  padding-top: 80px;
+  padding-bottom: 35px;
+  background-color: $gray;
+
+  @include tablets {
+    padding-top: 40px;
+  }
+
+  @include laptop {
+    padding-top: 80px;
+    padding-bottom: 50px;
+  }
+}
+
+.about-content {
+  @include flex(flex, column);
+
+  @include tablets {
+    flex-direction: row;
+    max-width: 1058px;
+  }
+}
+
+.about-info {
+  margin-bottom: 8px;
+
+  @include tablets {
+    margin-right: 26px;
+    margin-bottom: 0;
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    @include font(14px, 800, 20px, 0.15px);
+
+    @include tablets {
+      max-width: 690px;
+      margin-bottom: 25px;
+      @include font(24px, 800, 36px, 0.3px);
+    }
+
+    @include laptop {
+      @include font(32px, 800, 48px, 0.3px);
+    }
+  }
+
+  p {
+    margin-bottom: 16px;
+
+    @include tablets {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.about-form {
+  padding: 16px 15px;
+  border: 1px solid $lightBlue;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.02), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  width: 100%;
+
+  @include tablets {
+    position: sticky;
+    top: 10px;
+    width: 288px;
+    min-width: 288px;
+  }
+
+
+  &__title {
+    text-align: center;
+    margin-bottom: 14px;
+    @include font(20px, 800, 28px, 0.2px);
+
+    @include tablets {
+      margin-bottom: 17px;
+    }
+  }
+
+  &__btn {
+    width: 100%;
+  }
+
+  &__image {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto 8px;
+    border-radius: 8px;
+
+    @include tablets {
+      margin-bottom: 15px;
+    }
+  }
+}
